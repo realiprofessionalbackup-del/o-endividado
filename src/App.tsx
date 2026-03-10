@@ -126,9 +126,12 @@ export default function App() {
           </motion.div>
 
           <div className="flex flex-col items-center gap-6 px-4">
-            <button onClick={scrollToOffer} className="btn-primary w-full max-w-md text-lg md:text-xl">
+            <a 
+              href="https://pay.kiwify.com.br/OpSK5ka" 
+              className="btn-primary w-full max-w-md text-lg md:text-xl inline-block"
+            >
               Quero retomar minha paz agora
-            </button>
+            </a>
             
             <div className="flex flex-col items-center">
               <span className="text-brand-secondary/60 line-through text-base md:text-lg">De R$ 197,00</span>
@@ -297,9 +300,12 @@ export default function App() {
               </div>
             </div>
             
-            <button className="btn-primary w-full max-w-md text-xl md:text-2xl mb-8">
+            <a 
+              href="https://pay.kiwify.com.br/OpSK5ka" 
+              className="btn-primary w-full max-w-md text-xl md:text-2xl mb-8 inline-block"
+            >
               SIM! QUERO RECOMEÇAR AGORA
-            </button>
+            </a>
             
             <div className="flex justify-center gap-8 flex-wrap">
               <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-6 opacity-50" referrerPolicy="no-referrer" />
@@ -384,9 +390,12 @@ export default function App() {
           </p>
           
           <div className="flex flex-col items-center gap-8">
-            <button onClick={scrollToOffer} className="btn-primary w-full max-w-md text-2xl">
+            <a 
+              href="https://pay.kiwify.com.br/OpSK5ka" 
+              className="btn-primary w-full max-w-md text-2xl inline-block"
+            >
               QUERO MEU RECOMEÇO AGORA
-            </button>
+            </a>
             <div className="text-4xl md:text-6xl font-black text-brand-accent">R$ 19,90</div>
           </div>
         </div>
