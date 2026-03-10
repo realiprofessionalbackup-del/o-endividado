@@ -54,7 +54,7 @@ export default function App() {
   return (
     <div className="min-h-screen">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-20 pb-32 px-4 overflow-hidden bg-brand-primary text-brand-secondary">
+      <section className="relative pt-12 md:pt-20 pb-20 md:pb-32 px-4 overflow-hidden bg-brand-primary text-brand-secondary">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#d4af37,transparent_70%)]"></div>
         </div>
@@ -65,13 +65,13 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block px-4 py-1 rounded-full bg-brand-accent/20 text-brand-accent text-sm font-bold mb-6 uppercase tracking-widest">
+            <span className="inline-block px-4 py-1 rounded-full bg-brand-accent/20 text-brand-accent text-xs md:text-sm font-bold mb-6 uppercase tracking-widest">
               A saída não é fugir, é encarar com honra
             </span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-6 md:mb-8 leading-tight px-2">
               Pare de se esconder das dívidas e <span className="text-brand-accent italic">retome o controle</span> da sua vida emocional
             </h1>
-            <p className="text-xl md:text-2xl text-brand-secondary/80 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-2xl text-brand-secondary/80 mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
               Um treinamento profundo para quem está esmagado pela pressão das cobranças, pela vergonha e pelo medo do futuro. Aprenda a reconstruir sua dignidade e seu plano de saída.
             </p>
           </motion.div>
@@ -81,35 +81,64 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="relative aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-brand-accent/30 bg-black group cursor-pointer mb-12"
+            className="max-w-4xl mx-auto mb-16"
           >
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-20 h-20 bg-brand-action rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                <Play className="text-white fill-current ml-1" size={32} />
+            <div className="grid md:grid-cols-5 gap-8 items-center">
+              {/* Video Container (Vertical) */}
+              <div className="md:col-span-2 flex justify-center">
+                <div className="relative w-full max-w-[320px] aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-[0_0_50px_rgba(212,175,55,0.2)] border-[8px] border-brand-primary bg-black">
+                  <iframe 
+                    src="https://www.youtube.com/embed/PI9VrfE6LbU?autoplay=0&controls=1&rel=0" 
+                    title="VSL - Recomeço com Honra"
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+
+              {/* Key Points next to Video */}
+              <div className="md:col-span-3 text-left space-y-6">
+                <div className="bg-brand-accent/10 p-6 rounded-2xl border border-brand-accent/20">
+                  <h3 className="text-xl font-bold text-brand-accent mb-4 flex items-center gap-2">
+                    <Play size={20} fill="currentColor" /> Assista ao vídeo acima
+                  </h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="text-brand-accent shrink-0 mt-1" size={18} />
+                      <span className="text-brand-secondary/90">Entenda por que você se sente paralisado e como quebrar esse ciclo hoje.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="text-brand-accent shrink-0 mt-1" size={18} />
+                      <span className="text-brand-secondary/90">Descubra o método para retomar sua dignidade diante de qualquer credor.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="text-brand-accent shrink-0 mt-1" size={18} />
+                      <span className="text-brand-secondary/90">O primeiro passo prático para organizar sua mente e seu bolso.</span>
+                    </li>
+                  </ul>
+                </div>
+                <p className="text-brand-secondary/60 italic text-sm">
+                  * Aperte o play para entender como o treinamento vai transformar sua realidade emocional.
+                </p>
               </div>
             </div>
-            <img 
-              src="https://picsum.photos/seed/recomeco/1280/720?blur=2" 
-              alt="Vídeo de Apresentação" 
-              className="w-full h-full object-cover opacity-60"
-              referrerPolicy="no-referrer"
-            />
           </motion.div>
 
-          <div className="flex flex-col items-center gap-6">
-            <button onClick={scrollToOffer} className="btn-primary w-full max-w-md text-xl">
+          <div className="flex flex-col items-center gap-6 px-4">
+            <button onClick={scrollToOffer} className="btn-primary w-full max-w-md text-lg md:text-xl">
               Quero retomar minha paz agora
             </button>
             
             <div className="flex flex-col items-center">
-              <span className="text-brand-secondary/60 line-through text-lg">De R$ 197,00</span>
+              <span className="text-brand-secondary/60 line-through text-base md:text-lg">De R$ 197,00</span>
               <span className="text-4xl md:text-6xl font-black text-brand-accent">Por apenas R$ 19,90</span>
             </div>
             
-            <div className="flex items-center gap-4 text-sm text-brand-secondary/60 font-medium">
-              <span className="flex items-center gap-1"><Lock size={14} /> Acesso Imediato</span>
-              <span className="flex items-center gap-1"><ShieldCheck size={14} /> Compra 100% Segura</span>
-              <span className="flex items-center gap-1"><Clock size={14} /> Direto ao ponto</span>
+            <div className="flex flex-wrap justify-center items-center gap-4 text-xs md:text-sm text-brand-secondary/60 font-medium">
+              <span className="flex items-center gap-1 whitespace-nowrap"><Lock size={14} /> Acesso Imediato</span>
+              <span className="flex items-center gap-1 whitespace-nowrap"><ShieldCheck size={14} /> Compra 100% Segura</span>
+              <span className="flex items-center gap-1 whitespace-nowrap"><Clock size={14} /> Direto ao ponto</span>
             </div>
           </div>
         </div>
@@ -158,12 +187,17 @@ export default function App() {
           <div className="relative">
             <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-brand-accent opacity-50"></div>
             <img 
-              src="https://picsum.photos/seed/mentor/600/800" 
-              alt="Mentor" 
-              className="rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+              src="https://i.ibb.co/zhD6LJBx/Whats-App-Image-2026-03-10-at-16-38-17.jpg" 
+              alt="Miqueias Santos" 
+              className="rounded-2xl shadow-2xl w-full h-auto object-cover transition-all duration-700"
               referrerPolicy="no-referrer"
             />
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-brand-accent opacity-50"></div>
+            
+            <div className="mt-8 text-center md:text-left">
+              <h4 className="text-2xl font-black text-brand-accent">Miqueias Santos</h4>
+              <p className="text-brand-secondary/60 font-medium">Especialista em vendas e aceleração comercial</p>
+            </div>
           </div>
           
           <div>
@@ -247,23 +281,23 @@ export default function App() {
       </section>
 
       {/* 6. OFERTA IRRESISTÍVEL */}
-      <section id="oferta" className="py-24 px-4 bg-brand-secondary">
+      <section id="oferta" className="py-20 md:py-24 px-4 bg-brand-secondary">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="glass-card p-12 rounded-3xl border-2 border-brand-accent">
-            <h2 className="text-3xl md:text-5xl font-black mb-6">A decisão que muda o seu <span className="text-brand-accent italic">amanhã</span></h2>
-            <p className="text-xl mb-10 text-brand-primary/70">
+          <div className="glass-card p-6 md:p-12 rounded-3xl border-2 border-brand-accent">
+            <h2 className="text-2xl md:text-5xl font-black mb-6">A decisão que muda o seu <span className="text-brand-accent italic">amanhã</span></h2>
+            <p className="text-lg md:text-xl mb-10 text-brand-primary/70">
               Você pode continuar carregando esse peso sozinho, ou pode investir menos que o valor de um lanche para receber o caminho da sua reconstrução.
             </p>
             
-            <div className="mb-12">
-              <span className="block text-brand-primary/40 line-through text-2xl mb-2">De R$ 197,00</span>
+            <div className="mb-10 md:mb-12">
+              <span className="block text-brand-primary/40 line-through text-xl md:text-2xl mb-2">De R$ 197,00</span>
               <div className="flex flex-col items-center">
-                <span className="text-7xl md:text-9xl font-black text-brand-action">R$ 19,90</span>
-                <span className="text-sm font-bold uppercase tracking-widest text-brand-primary/60 mt-2">Pagamento único • Acesso vitalício</span>
+                <span className="text-6xl md:text-9xl font-black text-brand-action">R$ 19,90</span>
+                <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-brand-primary/60 mt-2">Pagamento único • Acesso vitalício</span>
               </div>
             </div>
             
-            <button className="btn-primary w-full max-w-md text-2xl mb-8">
+            <button className="btn-primary w-full max-w-md text-xl md:text-2xl mb-8">
               SIM! QUERO RECOMEÇAR AGORA
             </button>
             
