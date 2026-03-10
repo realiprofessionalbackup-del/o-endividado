@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-brand-primary: #1a1a1a; /* Deep Charcoal */
+  --color-brand-secondary: #f5f2ed; /* Warm Off-white */
+  --color-brand-accent: #d4af37; /* Gold/Amber for hope/value */
+  --color-brand-action: #e63946; /* Strong Red for CTA */
+  --color-brand-success: #2a9d8f; /* Emerald for growth/direction */
+}
+
+@layer base {
+  body {
+    @apply bg-brand-secondary text-brand-primary font-sans antialiased;
+  }
+  
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.btn-primary {
+  @apply bg-brand-action text-white font-bold py-4 px-8 rounded-full shadow-lg hover:scale-105 transition-transform duration-300 text-center uppercase tracking-wider;
+}
+
+.price-tag {
+  @apply text-brand-action font-black;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap');
